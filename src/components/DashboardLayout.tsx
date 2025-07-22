@@ -79,14 +79,14 @@ export function DashboardLayout() {
           <SidebarContent className="bg-background">
             {/* Logo */}
             <div className="p-6 border-b border-border">
-              <div className="flex items-center gap-2">
+              <NavLink to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
                 <img 
                   src="/lovable-uploads/05c202bc-a4d7-4f3f-800a-7d21233786b9.png" 
                   alt="Emisia" 
                   className="w-6 h-6"
                 />
                 <span className="font-bold text-lg text-foreground">Emisia</span>
-              </div>
+              </NavLink>
             </div>
 
             {/* Organization Group */}
