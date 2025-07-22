@@ -93,8 +93,8 @@ export function DashboardLayout() {
             <SidebarGroup>
               <SidebarGroupLabel
                 className={cn(
-                  "flex items-center justify-between cursor-pointer py-3 px-4 hover:bg-muted/50 transition-colors text-muted-foreground",
-                  isGroupActive(organizationItems) && "text-foreground bg-muted/30"
+                  "flex items-center justify-between cursor-pointer py-3 px-4 hover:bg-green-50 transition-colors text-muted-foreground",
+                  isGroupActive(organizationItems) && "bg-green-100"
                 )}
                 onClick={() => handleGroupClick("organization")}
                 onMouseEnter={() => setHoveredGroup("organization")}
@@ -124,10 +124,10 @@ export function DashboardLayout() {
                             to={item.url}
                             className={({ isActive }) =>
                               cn(
-                                "flex items-center gap-3 px-8 py-2 text-sm transition-colors",
+                                "flex items-center gap-3 px-8 py-2 text-sm transition-colors text-muted-foreground",
                                 isActive
-                                  ? "bg-green-100 text-green-800 font-medium rounded-md mx-2"
-                                  : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                                  ? "bg-green-200 font-medium rounded-md mx-2"
+                                  : "hover:bg-green-50"
                               )
                             }
                             onClick={() => handleItemClick("organization")}
@@ -147,8 +147,8 @@ export function DashboardLayout() {
             <SidebarGroup>
               <SidebarGroupLabel
                 className={cn(
-                  "flex items-center justify-between cursor-pointer py-3 px-4 hover:bg-muted/50 transition-colors text-muted-foreground",
-                  isGroupActive(productItems) && "text-foreground bg-muted/30"
+                  "flex items-center justify-between cursor-pointer py-3 px-4 hover:bg-green-50 transition-colors text-muted-foreground",
+                  isGroupActive(productItems) && "bg-green-100"
                 )}
                 onClick={() => handleGroupClick("products")}
                 onMouseEnter={() => setHoveredGroup("products")}
@@ -178,10 +178,10 @@ export function DashboardLayout() {
                             to={item.url}
                             className={({ isActive }) =>
                               cn(
-                                "flex items-center gap-3 px-8 py-2 text-sm transition-colors",
+                                "flex items-center gap-3 px-8 py-2 text-sm transition-colors text-muted-foreground",
                                 isActive
-                                  ? "bg-green-100 text-green-800 font-medium rounded-md mx-2"
-                                  : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                                  ? "bg-green-200 font-medium rounded-md mx-2"
+                                  : "hover:bg-green-50"
                               )
                             }
                             onClick={() => handleItemClick("products")}
