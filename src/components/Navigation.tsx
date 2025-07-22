@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
@@ -87,8 +88,8 @@ const Navigation = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.5, duration: 0.5 }}
             >
-              <Button variant="outline" size="sm" className="mr-2">
-                Sign In
+              <Button asChild variant="outline" size="sm" className="mr-2">
+                <Link to="/signin">Sign In</Link>
               </Button>
               <Button variant="eco" size="sm">
                 Get Started
@@ -153,8 +154,8 @@ const Navigation = () => {
                   </motion.a>
                 ))}
                 <div className="space-y-2 pt-4">
-                  <Button variant="outline" size="sm" className="w-full">
-                    Sign In
+                  <Button asChild variant="outline" size="sm" className="w-full">
+                    <Link to="/signin">Sign In</Link>
                   </Button>
                   <Button variant="eco" size="sm" className="w-full">
                     Get Started
