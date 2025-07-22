@@ -172,7 +172,7 @@ const HeroScene = () => {
           </Button>
         </motion.div>
 
-        /* {/* Scroll indicator */}
+        {/* Scroll indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -190,7 +190,7 @@ const HeroScene = () => {
               className="w-1 h-3 bg-primary rounded-full mt-2"
             />
           </motion.div>
-        </motion.div> */
+        </motion.div>
       </div>
     </motion.section>
   );
