@@ -25,9 +25,9 @@ const SignIn = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="w-full max-w-md"
+        className="w-full max-w-sm"
       >
-        <Card className="p-8 shadow-eco border border-border">
+        <Card className="p-6 shadow-lg border border-border/20">
           <div className="text-center mb-8">
             <motion.div
               initial={{ scale: 0.8 }}
