@@ -42,12 +42,14 @@ export function DashboardLayout() {
   const [hoveredGroup, setHoveredGroup] = useState<string | null>(null);
 
   const isGroupExpanded = (groupName: string) => {
-    return expandedGroups.includes(groupName) || 
-           hoveredGroup === groupName || 
-           isGroupActive([...organizationItems, ...productItems].filter(item => 
-             (groupName === "organization" && organizationItems.includes(item)) ||
-             (groupName === "products" && productItems.includes(item))
-           ));
+    // Show group if hovered
+    if (hoveredGroup === groupName) return true;
+    
+    // Show group if it has an active item and no other group is hovered
+    const hasActiveItem = (groupName === "organization" && isGroupActive(organizationItems)) ||
+                         (groupName === "products" && isGroupActive(productItems));
+    
+    return hasActiveItem && !hoveredGroup;
   };
 
   const isActive = (path: string) => location.pathname === path;
