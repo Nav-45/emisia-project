@@ -42,7 +42,12 @@ export function DashboardLayout() {
   const [hoveredGroup, setHoveredGroup] = useState<string | null>(null);
 
   const isGroupExpanded = (groupName: string) => {
-    return expandedGroups.includes(groupName) || hoveredGroup === groupName;
+    return expandedGroups.includes(groupName) || 
+           hoveredGroup === groupName || 
+           isGroupActive([...organizationItems, ...productItems].filter(item => 
+             (groupName === "organization" && organizationItems.includes(item)) ||
+             (groupName === "products" && productItems.includes(item))
+           ));
   };
 
   const isActive = (path: string) => location.pathname === path;
@@ -105,7 +110,10 @@ export function DashboardLayout() {
               </SidebarGroupLabel>
 
               {isGroupExpanded("organization") && (
-                <SidebarGroupContent>
+                <SidebarGroupContent
+                  onMouseEnter={() => setHoveredGroup("organization")}
+                  onMouseLeave={() => setHoveredGroup(null)}
+                >
                   <SidebarMenu>
                     {organizationItems.map((item) => (
                       <SidebarMenuItem key={item.title}>
@@ -156,7 +164,10 @@ export function DashboardLayout() {
               </SidebarGroupLabel>
 
               {isGroupExpanded("products") && (
-                <SidebarGroupContent>
+                <SidebarGroupContent
+                  onMouseEnter={() => setHoveredGroup("products")}
+                  onMouseLeave={() => setHoveredGroup(null)}
+                >
                   <SidebarMenu>
                     {productItems.map((item) => (
                       <SidebarMenuItem key={item.title}>
